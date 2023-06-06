@@ -284,7 +284,10 @@ print(latecurrent0)
 # print(latecurrent20)
 # print(latecurrent20f)
 
-doses = [0, 0.000001, 0.000005, 0.00001, 0.0001, 0.0005, 0.001, 0.002]
+if current == 1:
+    doses = [0, 1e-8, 1e-7, 3e-7, 1e-6, 3e-6, 1e-5, 3e-5]
+else
+    doses = [0, 0.000001, 0.000005, 0.00001, 0.0001, 0.0005, 0.001, 0.002]
 
 plt.plot(doses, latecurrent0)
 plt.show()
