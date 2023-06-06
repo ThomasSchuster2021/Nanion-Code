@@ -66,7 +66,7 @@ for var in variant_list:
     latechange0sum = 0
     peaktolate0sum = 0
     # peaktolate20sum = 0
-    for x in var_files:
+    for x in var_files: #why not cells?
         output0 = fclc.doseresponse0(x, cells[j])
         peakcurrent = output0[0]
         latecurrent = output0[1]
