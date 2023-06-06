@@ -88,6 +88,7 @@ for var in variant_list:
         peak_to_lates.append(peak_to_late)
         j = j + 1
 
+   #Only one input so only one data value. Ask what other data should be here.
     all_percent_blocks_late.append(percent_blocks_late)
     all_percent_blocks_peak.append(percent_blocks_peak)
     all_peaktolates.append(peak_to_lates)
