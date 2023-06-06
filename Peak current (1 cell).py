@@ -5,6 +5,7 @@ import openpyxl
 import matplotlib.pyplot as plt
 import functions as fc
 
+current = input('What drug areyou testing? 1 for Amiodarone, 2 for Mexiletine. ')
 filename = 'UDB/220714_003.mat'
 cell_num = 6
 data_type = 3
