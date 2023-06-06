@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import FunctionsPeakCurrent as fcpc
 
+current = input('What drug areyou testing? 1 for Amiodarone, 2 for Mexiletine. ')
 num = input('How many cells are you analyzing? ')
 i = 0
 k = 0
@@ -9,7 +10,7 @@ cell_nums = []
 legend_titles = []
 while i < int(num):
     file = input('Input MATLAB file name: ')
-    file = 'UDB/' + file
+    file = 'Data/' + file
     cell = int(input('Which cell? '))
     mat_files.append(file)
     cell_nums.append(cell)
@@ -25,7 +26,10 @@ print(legend_titles)
 #obtain 0Hz peak current
 i = 0
 peakcurrents0 = []
-doses = [0, 0.000001, 0.000005, 0.00001, 0.0001, 0.0005, 0.001, 0.002]
+if current == 1:
+    doses = [0, 1e-8, 1e-7, 3e-7, 1e-6, 3e-6, 1e-5, 3e-5]
+else
+    doses = [0, 0.000001, 0.000005, 0.00001, 0.0001, 0.0005, 0.001, 0.002]
 plt.figure()
 while i < int(num):
     output = fcpc.doseresponse0(mat_files[i], cell_nums[i])
@@ -43,7 +47,10 @@ plt.show()
 i = 0
 latecurrents10 = []
 peakcurrents10 = []
-doses = [0, 0.000001, 0.000005, 0.00001, 0.0001, 0.0005, 0.001, 0.002]
+if current == 1:
+    doses = [0, 1e-8, 1e-7, 3e-7, 1e-6, 3e-6, 1e-5, 3e-5]
+else
+    doses = [0, 0.000001, 0.000005, 0.00001, 0.0001, 0.0005, 0.001, 0.002]
 plt.figure()
 while i < int(num):
     output = fcpc.doseresponse10(mat_files[i], cell_nums[i])
@@ -61,7 +68,11 @@ plt.show()
 i = 0
 latecurrents20 = []
 peakcurrents20 = []
-doses = [0, 0.000001, 0.000005, 0.00001, 0.0001, 0.0005, 0.001, 0.002]
+
+if current == 1:
+    doses = [0, 1e-8, 1e-7, 3e-7, 1e-6, 3e-6, 1e-5, 3e-5]
+else
+    doses = [0, 0.000001, 0.000005, 0.00001, 0.0001, 0.0005, 0.001, 0.002]
 plt.figure()
 while i < int(num):
     output = fcpc.doseresponse20(mat_files[i], cell_nums[i])
