@@ -5,6 +5,7 @@ import openpyxl
 import matplotlib.pyplot as plt
 import FunctionsLateCurrent as fc
 
+current = input('What drug areyou testing? 1 for Amiodarone, 2 for Mexiletine. ')
 filename = 'UDB/230127_001.mat'
 cell_num = 5
 data_type = 3
