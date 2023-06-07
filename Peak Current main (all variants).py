@@ -8,7 +8,7 @@ sheet1 = wb.add_sheet('Peak Currents')
 row = 0
 col = 2
 rowupdated = 0
-
+comp = input('personal or lab computer? 1 for personal 2 for lab. ')
 doses = ['0 M', '1 uM', '5 uM', '10 uM', '100 uM', '500 uM', '1 mM', '2 mM']
 
 #Take in user inputs for how many variants, how many cells for each variant, and what cells to use
