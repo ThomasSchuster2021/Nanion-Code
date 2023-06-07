@@ -4,8 +4,9 @@ import numpy as np
 import openpyxl
 import matplotlib.pyplot as plt
 import functions as fc
-
+comp = input('personal or lab computer? 1 for personal 2 for lab. ')
 current = input('What drug areyou testing? 1 for Amiodarone, 2 for Mexiletine. ')
+file = input('What is the matlab file you want to analyze?' )
 filename = 'UDB/220714_003.mat'
 cell_num = 6
 data_type = 3
