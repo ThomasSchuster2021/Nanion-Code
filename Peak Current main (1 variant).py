@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import FunctionsPeakCurrent as fcpc
 
 current = input('What drug areyou testing? 1 for Amiodarone, 2 for Mexiletine. ')
+comp = input('personal or lab computer? 1 for personal 2 for lab. ')
 num = input('How many cells are you analyzing? ')
 i = 0
 k = 0
@@ -10,7 +11,10 @@ cell_nums = []
 legend_titles = []
 while i < int(num):
     file = input('Input MATLAB file name: ')
-    file = 'Data/' + file
+    if comp == 1:
+        file = 'Data/' + file
+    else
+        file = 'Analysis Files/' + file
     cell = int(input('Which cell? '))
     mat_files.append(file)
     cell_nums.append(cell)
