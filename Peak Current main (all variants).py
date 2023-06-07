@@ -27,7 +27,10 @@ while i < int(num_variants):
     variant_list.append(variant)
     while j < int(num_cells):
         file = input('Input MATLAB file name: ')
-        file = 'UDB/' + file
+        if comp == 1:
+            file = 'Data/' + file
+        else
+            file = 'Analysis Files/' + file
         cell = int(input('Which cell? '))
         mat_files.append(file)
         cell_nums.append(cell)
