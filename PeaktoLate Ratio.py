@@ -11,6 +11,7 @@ sheet2 = wb.add_sheet('% Block of Late Current')
 sheet3 = wb.add_sheet('Peak to Late Block Ratio')
 
 #Take in user inputs for how many variants, how many cells for each variant, and what cells to use
+comp = input('personal or lab computer? 1 for personal 2 for lab. ')
 num_variants = input('How many variants are you analyzing? ')
 i = 0
 variant_list = []
