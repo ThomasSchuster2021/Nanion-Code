@@ -12,7 +12,7 @@ legend_titles = []
 while i < int(num):
     file = input('Input MATLAB file name: ')
     if comp == 1:
-        file = 'Data/' + file
+        file = 'Data\\' + file
     else
         file = 'Analysis Files/' + file
     cell = int(input('Which cell? '))
