@@ -28,7 +28,8 @@ while i < int(num_variants):
     while j < int(num_cells):
         file = input('Input MATLAB file name: ')
         if comp == 1:
-            file = 'Data/' + file
+            #file = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\" + file
+            file = "Data\\" + file
         else
             file = 'Analysis Files/' + file
         cell = int(input('Which cell? '))
