@@ -8,9 +8,10 @@ comp = input('personal or lab computer? 1 for personal 2 for lab. ')
 current = input('What drug areyou testing? 1 for Amiodarone, 2 for Mexiletine. ')
 file = input('Input MATLAB file name: ')
 if comp == 1:
-    file = 'Data/' + file
+    #file = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\" + file
+    file = "Data\\" + file
 else
-    file = 'Analysis Files/' + file
+    file = 'Analysis Files\\' + file
 cell_num = 6
 data_type = 3
 t_num = filename.split('_')[0]
