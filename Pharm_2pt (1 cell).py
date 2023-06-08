@@ -6,14 +6,15 @@ import matplotlib.pyplot as plt
 import FunctionsLateCurrent as fc
 
 current = input('What drug are you testing? 1 for Amiodarone, 2 for Mexiletine. ')
-filename = 'UDB/230127_001.mat'
+filename = 'Data/230524_001.mat'
 cell_num = 5
 data_type = 3
 t_num = filename.split('_')[0]
 r_num = filename.split('.')[0]
 traces = fc.get_traces(filename)
 
-excel_filename = '%s/%s_1NaPharmUDB.xls' % (os.getcwd(),r_num)
+#excel_filename = '%s/%s_1NaPharmUDB.xls' % (os.getcwd(),r_num)
+excel_filename = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\230524_001_1NaPharmUDB.xls"
 xlsx_name = fc.xls_to_xlsx(excel_filename)
 wb = openpyxl.load_workbook(xlsx_name)
 sht_name = wb.sheetnames[0]
