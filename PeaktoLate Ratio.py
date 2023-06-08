@@ -29,7 +29,7 @@ while i < int(num_variants):
         file = input('Input MATLAB file name: ')
         if comp == 1:
             #file = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\" + file
-        file = "Data\\" + file
+            file = "Data\\" + file
         else
             file = 'Analysis Files\\' + file
         cell = int(input('Which cell? '))
