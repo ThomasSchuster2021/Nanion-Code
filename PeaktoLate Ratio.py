@@ -11,7 +11,7 @@ sheet2 = wb.add_sheet('% Block of Late Current')
 sheet3 = wb.add_sheet('Peak to Late Block Ratio')
 
 #Take in user inputs for how many variants, how many cells for each variant, and what cells to use
-comp = input('personal or lab computer? 1 for personal 2 for lab. ')
+comp = int(input('personal or lab computer? 1 for personal 2 for lab. '))
 num_variants = input('How many variants are you analyzing? ')
 i = 0
 variant_list = []
@@ -30,8 +30,10 @@ while i < int(num_variants):
         if comp == 1:
             #file = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\" + file
             file = "Data\\" + file
+            print('Hi')
         else:
             file = 'Analysis Files\\' + file
+            print('Bye')
         cell = int(input('Which cell? '))
         mat_files.append(file)
         cell_nums.append(cell)
@@ -72,8 +74,8 @@ for var in variant_list:
     peaktolate0sum = 0
     # peaktolate20sum = 0
     #for x in var_files: #why not cells?
-    for x in cells: #Changed
-        output0 = fclc.doseresponse0(x, cells[j])
+    for x in num_cells: #Changed
+        output0 = fclc.doseresponse0(var_files[j], cells[j]) #var_files was x
         peakcurrent = output0[0]
         latecurrent = output0[1]
         latecurrent100 = latecurrent[0]
