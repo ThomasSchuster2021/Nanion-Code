@@ -30,7 +30,7 @@ while i < int(num_variants):
         if comp == 1:
             #file = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\" + file
             file = "Data\\" + file
-        else
+        else:
             file = 'Analysis Files\\' + file
         cell = int(input('Which cell? '))
         mat_files.append(file)
