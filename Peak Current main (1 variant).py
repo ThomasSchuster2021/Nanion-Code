@@ -14,7 +14,7 @@ while i < int(num):
     if comp == 1:
         file = 'Data\\' + file
     else
-        file = 'Analysis Files/' + file
+        file = 'Analysis Files\\' + file
     cell = int(input('Which cell? '))
     mat_files.append(file)
     cell_nums.append(cell)
