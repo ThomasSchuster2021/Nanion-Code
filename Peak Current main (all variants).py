@@ -8,7 +8,7 @@ sheet1 = wb.add_sheet('Peak Currents')
 row = 0
 col = 2
 rowupdated = 0
-comp = input('personal or lab computer? 1 for personal 2 for lab. ')
+
 doses = ['0 M', '1 uM', '5 uM', '10 uM', '100 uM', '500 uM', '1 mM', '2 mM']
 
 #Take in user inputs for how many variants, how many cells for each variant, and what cells to use
@@ -18,6 +18,7 @@ variant_list = []
 files = []
 nums = []
 legend_titles = []
+cell_names = []
 while i < int(num_variants):
     j = 0
     mat_files = []
@@ -26,15 +27,17 @@ while i < int(num_variants):
     num_cells = input('How many cells for this variant? ')
     variant_list.append(variant)
     while j < int(num_cells):
-        file = input('Input MATLAB file name: ')
-        if comp == 1:
-            #file = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\" + file
-            file = "Data\\" + file
-        else
-            file = 'Analysis Files/' + file
+        #file = input('Input MATLAB file name: ')
+        run = input('Input Run name: ')
+        file = run
+        #file = run + '.mat'
+        #file = 'UDB/' + file
+        # file = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\" + file
+        file = "Data\\" + file
         cell = int(input('Which cell? '))
         mat_files.append(file)
         cell_nums.append(cell)
+        cell_names.append(str(cell) + ' ' + str(run))
         j = j+1
     files.append(mat_files)
     nums.append(cell_nums)
@@ -52,6 +55,9 @@ i = 0
 all_peak_currents0 = []
 all_peak_currents10 = []
 all_peak_currents20 = []
+cell_column0 = 2
+cell_column10 = 3 + int(num_cells)
+cell_column20 = 6 + int(num_cells)
 #for each variant, extract the peak current at each drug concentration for each cell
 for var in variant_list:
     var_files = files[i]
@@ -86,7 +92,15 @@ for var in variant_list:
     for d in doses:
         sheet1.write(int(row_doses), 0, d)
         row_doses = row_doses + 1
-
+   # for c in cell_names:
+   #     sheet1.write(0, int(cell_column0), c)
+   #     cell_column0 = cell_column0 + 1
+   # for c in cell_names:
+   #     sheet1.write(0, int(cell_column10), c)
+   #     cell_column10 = cell_column10 + 1
+   # for c in cell_names:
+   #     sheet1.write(0, int(cell_column20), c)
+   #     cell_column20 = cell_column20 + 1
     for x in peakcurrents0:
         row = rowupdated
         for y in x:
