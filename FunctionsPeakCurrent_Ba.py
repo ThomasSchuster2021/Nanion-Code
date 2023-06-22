@@ -167,28 +167,14 @@ def doseresponse(run, cell_num):
                 peak_loc = int(peak_locu)
 
             # specify which points to include for late current and compute late current
-            z = 0
-            start_loc = peak_loc + 350
-            end_loc = peak_loc + 450
-            for y1 in ysinrange:
-                if z > start_loc:
-                    if z < end_loc:
-                        sumlate = sumlate + ysinrange[z]
-                z = z + 1
-        #print('Sum of Peaks: ')
-        #print(sumpeak0)
-        #print(' ')
+           
         counter = counter + 1
-        sumlate = sumlate / 2
         sumpeak = sumpeak / 2
-        latecurrent.append(sumlate)
         peakcurrent.append(sumpeak)
         j = j + 1
-    latecurrentf = np.array(latecurrent)
     peakcurrentf = np.array(peakcurrent)
     print(peakcurrentf)
     peakcurrentf = peakcurrentf / min(peakcurrentf) #min because most negative
     peakcurrentf = peakcurrentf * 100
-    latecurrentf = latecurrentf * 100
-    return([peakcurrentf, latecurrentf])
+    return(peakcurrentf)
 
