@@ -87,6 +87,7 @@ for var in variant_list:
    # for c in cell_names:
    #     sheet1.write(0, int(cell_column20), c)
    #     cell_column20 = cell_column20 + 1
+    q=2
     for x in peakcurrents:
         row = rowupdated
         sheet1.write(0,col, cell_names[q])
@@ -94,7 +95,7 @@ for var in variant_list:
             sheet1.write(row, col, y)
             row = row + 1
         col = col + 1
-`       q=q+1
+        q = q + 1
     row = rowupdated
     col = col + 1
   

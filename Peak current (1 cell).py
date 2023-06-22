@@ -3,20 +3,20 @@ import os
 import numpy as np
 import openpyxl
 import matplotlib.pyplot as plt
-import functions as fc
+import FunctionsPeakCurrent as fc
 comp = input('personal or lab computer? 1 for personal 2 for lab. ')
 current = input('What drug areyou testing? 1 for Amiodarone, 2 for Mexiletine. ')
 file = input('Input MATLAB file name: ')
 if comp == 1:
     #file = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\" + file
     file = "Data\\" + file
-else
+else:
     file = 'Analysis Files\\' + file
 cell_num = 6
 data_type = 3
-t_num = filename.split('_')[0]
-r_num = filename.split('.')[0]
-traces = fc.get_traces(filename)
+t_num = file.split('_')[0]
+r_num = file.split('.')[0]
+traces = fc.get_traces(file)
 
 excel_filename = '%s/%s_1NaPharmUDB.xls' % (os.getcwd(),r_num)
 xlsx_name = fc.xls_to_xlsx(excel_filename)
@@ -212,7 +212,7 @@ print(peakcurrent20f)
 
 if current == 1:
     doses = [0, 1e-8, 1e-7, 3e-7, 1e-6, 3e-6, 1e-5, 3e-5]
-else
+else:
     doses = [0, 0.000001, 0.000005, 0.00001, 0.0001, 0.0005, 0.001, 0.002]
 
 plt.plot(doses, peakcurrent0f)
