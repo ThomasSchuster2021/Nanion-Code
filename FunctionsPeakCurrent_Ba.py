@@ -115,7 +115,6 @@ def doseresponse(run, cell_num):
     counter = 0
     # to use 2 traces for each dose
     for p in t_2pts:
-        sumlate = 0
         sumpeak = 0
         print(counter)
         for x in p:
