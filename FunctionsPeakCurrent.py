@@ -192,13 +192,14 @@ def doseresponse0(run, cell_num):
     latecurrent0f = latecurrent0f * 100
     return([peakcurrent0f, latecurrent0f])
 
-def doseresponse10(filename, cell_num): #the second value is much more accurate
+def doseresponse10(run, cell_num): #the second value is much more accurate
     data_type = 3
+    filename = run + ".mat"
     t_num = filename.split('_')[0]
     r_num = filename.split('.')[0]
     traces = get_traces(filename)
 
-    excel_filename = '%s/%s_1NaPharmUDB.xls' % (os.getcwd(), r_num)
+    excel_filename = run + '_1NaPharmUDB.xls'
     xlsx_name = xls_to_xlsx(excel_filename)
     wb = openpyxl.load_workbook(xlsx_name)
     sht_name = wb.sheetnames[0]
@@ -304,13 +305,14 @@ def doseresponse10(filename, cell_num): #the second value is much more accurate
     latecurrent10f = latecurrent10f * 100
     return ([peakcurrent10f, latecurrent10f])
 
-def doseresponse20(filename, cell_num):
+def doseresponse20(run, cell_num):
+    filename = run + ".mat"
     data_type = 3
     t_num = filename.split('_')[0]
     r_num = filename.split('.')[0]
     traces = get_traces(filename)
 
-    excel_filename = '%s/%s_1NaPharmUDB.xls' % (os.getcwd(), r_num)
+    excel_filename = run + '_1NaPharmUDB.xls'
     xlsx_name = xls_to_xlsx(excel_filename)
     wb = openpyxl.load_workbook(xlsx_name)
     sht_name = wb.sheetnames[0]

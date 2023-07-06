@@ -32,8 +32,9 @@ while i < int(num_variants):
         file = run
         #file = run + '.mat'
         #file = 'UDB/' + file
-        # file = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\" + file
-        file = "Data\\" + file
+        file = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\" + file
+        #file = "Data\\" + file
+        #file = "C:\\Users\\thoma\\OneDrive\\Documents\\Research Code\\Data\\230531_003"
         cell = int(input('Which cell? '))
         mat_files.append(file)
         cell_nums.append(cell)
